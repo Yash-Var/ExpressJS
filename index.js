@@ -17,7 +17,7 @@ app.set('view engine',"hbs");
 app.set('views',temp);
 hbs.registerPartials(partials);
 
-app.use(express.static(path.join(__dirname,"/public")));
+// app.use(express.static(path.join(__dirname,"/public")));
 
 
 app.get("",(req,res)=>{
@@ -34,6 +34,11 @@ app.get("/",(req,res)=>{
     res.send("yash varshney");
 });
 
+app.get("*",(req,res)=>{
+    res.render("404",{
+        name:"page not found"
+    });
+});
 app.listen(port,()=>{
 console.log(`listening to the the ${port}`);
 });
