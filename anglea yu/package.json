@@ -1,0 +1,14 @@
+{
+  "name": "anglea-yu",
+  "version": "1.0.0",
+  "description": "backed with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yash varshney",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0"
+  }
+}
