@@ -26,20 +26,20 @@ app.get("/api/product/:productID", (req, res) => {
   res.json(singleProduct);
 });
 app.get("/api/yash/query", (req, res) => {
- const {serach,limit}=req.query
- let sortedProduct=[...products];
- if(serach){
-    sortedProduct=sortedProduct.filter((products)=>{
-        return products.name.startsWith(serach);
-    })
- }
- if(limit){
-    sortedProduct=sortedProduct.slice(0,Number(limit))
- }
- if(sortedProduct<1){
-    return res.status(200).json({sucess:true,data:[]})
- }
- res.status(200).json(sortedProduct)
+  const { serach, limit } = req.query;
+  let sortedProduct = [...products];
+  if (serach) {
+    sortedProduct = sortedProduct.filter((products) => {
+      return products.name.startsWith(serach);
+    });
+  }
+  if (limit) {
+    sortedProduct = sortedProduct.slice(0, Number(limit));
+  }
+  if (sortedProduct < 1) {
+    return res.status(200).json({ sucess: true, data: [] });
+  }
+  res.status(200).json(sortedProduct);
 });
 // app.all('*',(req,res)=>{
 //     res.send("Page Not Found");
